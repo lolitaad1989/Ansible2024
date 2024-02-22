@@ -2,14 +2,23 @@
 - hosts: all
   become: yes
   become_user: root
-
   tasks:
-  - name: Ensure Nginx is at the latest version
-    apt:
-      update_cache: true
-      name: nginx
-      state: latest
-  - name: Make sure Nginx is runnning
-    systemd:
-      state: started
-      name: nginx
+    - name: install nginx
+      apt: name=nginx state=latest
+    - name: start nginx
+      service:
+          name: nginx
+          state: started
+
+  # tasks:
+  # - name: Ensure Nginx is at the latest version
+  #   apt:
+  #     update_cache: true
+  #     name: nginx
+  #     state: latest
+  # - name: Make sure Nginx is runnning
+  #   systemd:
+  #     state: started
+  #     name: nginx
+
+

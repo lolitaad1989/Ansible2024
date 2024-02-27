@@ -2,4 +2,4 @@
 - hosts: all
   become: true
   tasks:
-  - user: :name=jhon
+  - user: name=jhon

@@ -2,4 +2,5 @@
 - hosts: all
   become: true
   tasks:
-  - user: name=jhon
+  - name: Creating user jhon
+    user: name=jhon

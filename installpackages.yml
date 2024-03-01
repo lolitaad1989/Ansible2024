@@ -8,3 +8,7 @@
     yum:
      name: tree
      state: installed
+  - name: installing yum git packages
+    yum: 
+     name: git 
+     state: installed

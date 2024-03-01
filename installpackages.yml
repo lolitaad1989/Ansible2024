@@ -1,0 +1,10 @@
+---
+- name: This playbook installs packages using yum
+  hosts: dev
+  become: true
+
+  tasks:
+  - name: Insalling yum git packages
+    yum:
+     name: git
+     state: installed

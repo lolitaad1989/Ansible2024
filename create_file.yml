@@ -1,19 +1,17 @@
 ---
 - name: This playbook creates a file or directory
   hosts: all
-  become: true
+ # become: true
 
   tasks:
   - name: Create a directory if it does not exist
     ansible.builtin.file:
-      path: /worksss
+      path: /sampledir
       state: directory
       mode: '0755'
   - name: Create a file
     ansible.builtin.file:
-      path: /worksss/foo.txt
+      path: /sampledir/foo.txt
       state: touch
-      owner: root
-      group: root
       mode: '0644'
 

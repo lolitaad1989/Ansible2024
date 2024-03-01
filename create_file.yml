@@ -12,7 +12,7 @@
   - name: Create a file
     ansible.builtin.file:
       path: /etc/foo.txt
-      state: file
+      state: touch
       owner: root
       group: root
       mode: '0644'

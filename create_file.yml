@@ -11,7 +11,7 @@
       mode: '0755'
   - name: Create a file
     ansible.builtin.file:
-      path: /work/foo.txt
+      path: /etc/foo.txt
       state: file
       owner: root
       group: root

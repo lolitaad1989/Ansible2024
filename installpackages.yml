@@ -6,5 +6,5 @@
   tasks:
   - name: Insalling yum git packages
     yum:
-     name: git
+     name: tree
      state: installed

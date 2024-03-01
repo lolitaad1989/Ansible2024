@@ -7,6 +7,6 @@
     ansible.builtin.copy:
       src: /home/ansadmin/Ansible2024/nginx.yml
       dest: /home/ansadmin/sampledir/nginxcopy.txt
-      owner: ec2-user
-      group: ec2-user
+      owner: jhon
+      group: jhon
       mode: '0644'

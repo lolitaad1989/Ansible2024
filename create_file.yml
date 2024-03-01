@@ -1,0 +1,13 @@
+---
+- name: This playbook creates a file or directory
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Create a file
+    ansible.builtin.file:
+      path: /work/foo.txt
+      owner: foo
+      group: foo
+      mode: '0644'
+

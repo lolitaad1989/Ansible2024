@@ -6,7 +6,7 @@
   tasks:
   - name: Create a directory if it does not exist
     ansible.builtin.file:
-      path: /work
+      path: /worksss
       state: directory
       mode: '0755'
   - name: Create a file

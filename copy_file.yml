@@ -5,8 +5,8 @@
   tasks:
   - name: copy a file
     ansible.builtin.copy:
-      src: /home/ansadmin/Ansible2024/nginx.yml
-      dest: /home/ansadmin/sampledir/nginxcopy.txt
+      src: /home/ansadmin/Ansible2024/index.html
+      dest: /home/ansadmin/sampledir/index.html
       owner: jhon
       group: jhon
       mode: '0644'

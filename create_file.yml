@@ -1,6 +1,7 @@
 ---
 - name: This playbook creates a file or directory
   hosts: all
+  gather_facts: no
  # become: true
 
   tasks:

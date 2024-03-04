@@ -28,4 +28,4 @@
   - name: Start tomcat services
     ansible.builtin.shell: nohup startup.sh
     args:
-      chdir: /opt/apache-tomcat-8.5.99/bin/
+      chdir: /opt/apache-tomcat-8.5.99/bin

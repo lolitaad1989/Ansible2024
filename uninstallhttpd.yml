@@ -1,0 +1,14 @@
+---
+- name: This playbook installs packages using yum
+  hosts: dev
+  become: true
+
+  tasks:
+  - name: Make sure to stop  the service
+    ansible.builtin.service:
+      name: httpd
+      state: stopped
+  - name: UnInstall the latest version of Apache
+    ansible.builtin.yum:
+      name: httpd
+      state: remove

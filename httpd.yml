@@ -11,6 +11,13 @@
     notify: make sure to start the service
     when: ansible_os_family == "RedHat"
 
+  - name: copy a file
+    ansible.builtin.copy:
+      src: //home/ansadmin/Ansible2024/index.html
+      dest: /var/www/html
+      mode: '0666'
+
+
   handlers:
   - name: make sure to start the service
     ansible.builtin.service:
@@ -18,8 +25,3 @@
       state: started
     when: ansible_os_family == "Redhat"
 
-  - name: copy a file
-    ansible.builtin.copy:
-      src: //home/ansadmin/Ansible2024/index.html
-      dest: /var/www/html
-      mode: '0666'

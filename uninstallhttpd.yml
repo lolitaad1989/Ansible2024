@@ -11,4 +11,4 @@
   - name: UnInstall the latest version of Apache
     ansible.builtin.yum:
       name: httpd
-      state: remove
+      state: removed

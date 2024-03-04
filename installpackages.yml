@@ -3,12 +3,18 @@
   hosts: dev
   become: true
 
+  # tasks:
+  # - name: Insalling yum git packages
+  #   yum:
+  #    name: tree
+  #    state: installed
+  # - name: installing yum git packages
+  #   yum: 
+  #    name: git 
+  #    state: installed
+
   tasks:
-  - name: Insalling yum git packages
-    yum:
-     name: tree
-     state: installed
-  - name: installing yum git packages
-    yum: 
-     name: git 
-     state: installed
+   - name: installing many packages
+     yum:
+      name: ['git','make','gcc','wget','telnet', 'gzip']
+      state: installed

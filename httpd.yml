@@ -11,5 +11,5 @@
   - name: make sure to start the service
     ansible.builtin.service:
       name: httpd
-      state: enabled
+      state: started
 

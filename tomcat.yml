@@ -1,0 +1,31 @@
+---
+- name: setup tomcat
+  hosts: dev
+  become: true
+  tasks:
+  - name: Install java
+    ansible.builtin.yum:
+      name: java
+      state: installed
+    when: ansible_os_family == "RedHat"
+
+  - name: Download tomcat packages
+    get_url:
+        url: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.99/bin/apache-tomcat-8.5.99.tar.gz
+        dest: /opt
+  
+  - name: Untar apache packages
+    ansible.builtin.unarchive:
+      src: /opt/apache-tomcat-8.5.99.tar.gz
+      dest: /opt
+      remote_src: yes
+
+  - name: Add execution permissions to the startup.sh
+    ansible.builtin.file:
+      path: /opt/apache-tomcat-8.5.99/bin/startup.sh
+      mode: '0777'
+
+  - name: Start tomcat services
+    ansible.builtin.shell: nohup startup.sh
+    args:
+      chdir: /opt/apache-tomcat-8.5.99/bin/

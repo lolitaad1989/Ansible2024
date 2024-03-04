@@ -13,19 +13,19 @@
   #    name: git 
   #    state: installed
 
-  # tasks:
-  #  - name: installing many packages
-  #    yum:
-  #     name: ['git','make','gcc','wget','telnet', 'gzip']
-  #     state: installed
-
   tasks:
    - name: installing many packages
      yum:
-      name: "{{item}}"
+      name: ['git','make','gcc','wget','telnet', 'gzip']
       state: installed
-     with_items:
-      - git
-      - make
-      - gcc
-      - wget
+
+  # tasks:
+  #  - name: installing many packages
+  #    yum:
+  #     name: "{{item}}"
+  #     state: installed
+  #    with_items:
+  #     - git
+  #     - make
+  #     - gcc
+  #     - wget

@@ -8,6 +8,7 @@
     ansible.builtin.yum:
       name: httpd
       state: latest
+  - name: make sure to start the service
     ansible.builtin.service:
       name: httpd
       state: enabled

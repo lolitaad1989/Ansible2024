@@ -5,6 +5,6 @@
   - user.txt
   become: true
   tasks:
-  - name: Creating users
+  - name: Creating user {{user}}
     user:
      name: "{{ user }}"

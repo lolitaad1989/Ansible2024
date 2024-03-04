@@ -2,7 +2,7 @@
 - name: This playbook is to creaet user
   hosts: all
   vars files:
-    - user.txt
+  - user.txt
   become: true
   tasks:
   - name: Creating users

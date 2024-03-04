@@ -1,6 +1,6 @@
 ---
 - name: setup tomcat
-  hosts: dev
+  hosts: all
   become: true
   tasks:
   - name: Install java

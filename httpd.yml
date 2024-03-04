@@ -8,3 +8,7 @@
     ansible.builtin.yum:
       name: httpd
       state: latest
+    ansible.builtin.service:
+      name: httpd
+      state: started
+

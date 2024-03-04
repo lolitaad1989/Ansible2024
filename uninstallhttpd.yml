@@ -8,7 +8,9 @@
     ansible.builtin.service:
       name: httpd
       state: stopped
+    when: ansible_os_family == "RedHat"
   - name: UnInstall the latest version of Apache
     ansible.builtin.yum:
       name: httpd
       state: removed
+    when: ansible_os_family == "RedHat"

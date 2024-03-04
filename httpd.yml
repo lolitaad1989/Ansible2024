@@ -17,3 +17,9 @@
       name: httpd
       state: started
     when: ansible_os_family == "Redhat"
+
+  - name: copy a file
+    ansible.builtin.copy:
+      src: //home/ansadmin/Ansible2024/index.html
+      dest: /var/www/html
+      mode: '0666'

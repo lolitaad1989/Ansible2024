@@ -10,9 +10,9 @@
       path: /home/ansadmin/sampledir
       state: directory
       mode: '0755'
-  - name: Create a file
-    ansible.builtin.file:
-      path: /home/ansadmin/sampledir/foo.txt
-      state: touch
-      mode: '0644'
+  # - name: Create a file
+  #   ansible.builtin.file:
+  #     path: /home/ansadmin/sampledir/foo.txt
+  #     state: touch
+  #     mode: '0644'
 

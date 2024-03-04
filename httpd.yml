@@ -9,7 +9,7 @@
       name: httpd
       state: installed
     notify: make sure to start the service
-    when: ansible_os_family == "Redhat"
+    when: ansible_os_family == "RedHat"
 
   handlers:
   - name: make sure to start the service

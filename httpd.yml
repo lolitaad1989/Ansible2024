@@ -7,7 +7,10 @@
   - name: Install the latest version of Apache
     ansible.builtin.yum:
       name: httpd
-      state: latest
+      state: installed
+    notify: make sure to start the service
+
+  handlers:
   - name: make sure to start the service
     ansible.builtin.service:
       name: httpd

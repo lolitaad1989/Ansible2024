@@ -1,0 +1,27 @@
+---
+- name: This playbook installs packages using yum
+  hosts: dev
+  become: true
+
+  tasks:
+  - name: Install the latest version of Apache
+    ansible.builtin.yum:
+      name: httpd
+      state: installed
+    notify: make sure to start the service
+    when: ansible_os_family == "RedHat"
+
+  - name: copy a file
+    ansible.builtin.copy:
+      src: //home/ansadmin/Ansible2024/index.html
+      dest: /var/www/html
+      mode: '0666'
+
+
+  handlers:
+  - name: make sure to start the service
+    ansible.builtin.service:
+      name: httpd
+      state: started
+    when: ansible_os_family == "Redhat"
+

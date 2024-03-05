@@ -1,0 +1,13 @@
+---
+- name: Anbile playbook to download Ansible2024
+  hosts: all
+  vars_files:
+    - vaultpass.yml
+  become: true
+  tasks:
+    - name: Clone a repo
+      ansible.builtin.git:
+        repo: https://github.com/{{password}}/Ansible2024.git
+        dest: /opt/ansible-programs
+        single_branch: yes
+        version: master

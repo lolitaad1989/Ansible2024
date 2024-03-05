@@ -1,2 +1,25 @@
 ---
 # tasks file for setup-apache
+  - name: Install the latest version of Apache
+    ansible.builtin.yum:
+      name: httpd
+      state: installed
+    when: ansible_os_family == "RedHat"
+    notify: make sure to start the service
+
+
+  - name: copy a file
+    ansible.builtin.copy:
+      src: /home/ansadmin/Ansible2024/index.html
+      dest: /var/www/html
+      mode: '0666'
+
+  - name: Ensure the default Apache port is {{ portsa }}
+    ansible.builtin.lineinfile:
+      path: /etc/httpd/conf/httpd.conf
+      regexp: '^Listen '
+      insertafter: '^#Listen '
+      line: Listen {{ portsa }}
+    when: ansible_os_family == "RedHat"
+    notify: make sure to start the service
+

@@ -2,6 +2,8 @@
 - name: This playbook installs packages using yum
   hosts: dev
   become: true
+  vars: 
+    port: 80
 
   tasks:
   - name: Install the latest version of Apache
@@ -17,12 +19,12 @@
       dest: /var/www/html
       mode: '0666'
 
-  - name: Ensure the default Apache port is 8081
+  - name: Ensure the default Apache port is {{ port }}
     ansible.builtin.lineinfile:
       path: /etc/httpd/conf/httpd.conf
       regexp: '^Listen '
       insertafter: '^#Listen '
-      line: Listen 8081
+      line: Listen {{ port }}
     when: ansible_os_family == "RedHat"
     notify: make sure to start the service
 

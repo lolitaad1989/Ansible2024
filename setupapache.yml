@@ -3,7 +3,7 @@
   hosts: dev
   become: true
   vars: 
-    port: 80
+    portsa: 80
 
   tasks:
   - name: Install the latest version of Apache
@@ -19,12 +19,12 @@
       dest: /var/www/html
       mode: '0666'
 
-  - name: Ensure the default Apache port is {{ port }}
+  - name: Ensure the default Apache port is {{ portsa }}
     ansible.builtin.lineinfile:
       path: /etc/httpd/conf/httpd.conf
       regexp: '^Listen '
       insertafter: '^#Listen '
-      line: Listen {{ port }}
+      line: Listen {{ portsa }}
     when: ansible_os_family == "RedHat"
     notify: make sure to start the service
 

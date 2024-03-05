@@ -17,6 +17,15 @@
       dest: /var/www/html
       mode: '0666'
 
+  - name: Ensure the default Apache port is 8081
+    ansible.builtin.lineinfile:
+      path: /etc/httpd/conf/httpd.conf
+      regexp: '^Listen '
+      insertafter: '^#Listen '
+      line: Listen 8081
+    when: ansible_os_family == "RedHat"
+    notify: make sure to start the service
+
 
   handlers:
   - name: make sure to start the service
@@ -25,3 +34,7 @@
       state: started
     when: ansible_os_family == "Redhat"
 
+  - name: Reload service httpd, in all cases
+    ansible.builtin.service:
+      name: httpd
+      state: restarted

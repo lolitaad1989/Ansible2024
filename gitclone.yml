@@ -8,6 +8,6 @@
     - name: Clone a repo
       ansible.builtin.git:
         repo: https://github.com/{{password}}/Ansible2024.git
-        dest: /opt/ansible-programs
+        dest: /opt/ansible-p1
         single_branch: yes
         version: master

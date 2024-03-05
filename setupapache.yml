@@ -3,7 +3,7 @@
   hosts: dev
   become: true
   vars: 
-    portsa: 80
+    portsa: 8081
 
   tasks:
   - name: Install the latest version of Apache

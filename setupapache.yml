@@ -3,7 +3,7 @@
   hosts: dev
   become: true
   vars: 
-    portsa: 8081
+    portsa: 80
 
   tasks:
   - name: Install the latest version of Apache
@@ -35,9 +35,3 @@
     ansible.builtin.service:
       name: httpd
       state: started
-    when: ansible_os_family == "Redhat"
-
-  - name: Reload service httpd, in all cases
-    ansible.builtin.service:
-      name: httpd
-      state: restarted

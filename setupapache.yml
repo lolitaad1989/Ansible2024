@@ -3,15 +3,16 @@
   hosts: dev
   become: true
   vars: 
-    portsa: 80
+    portsa: 8081
 
   tasks:
   - name: Install the latest version of Apache
     ansible.builtin.yum:
       name: httpd
       state: installed
-    notify: make sure to start the service
     when: ansible_os_family == "RedHat"
+    notify: make sure to start the service
+
 
   - name: copy a file
     ansible.builtin.copy:

@@ -34,4 +34,4 @@
   - name: make sure to start the service
     ansible.builtin.service:
       name: httpd
-      state: started
+      state: reloaded

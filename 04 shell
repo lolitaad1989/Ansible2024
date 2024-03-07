@@ -9,3 +9,11 @@
     - name: Prining OUT Variable 
       ansible.builtin.debug:
         msg: "{{OUT.stdout}}" 
+  
+    - name: Declaring the variable 
+      ansible.builtin.set_fact: 
+        STATUS: "{{OUT.rc}}"
+
+    - name: Prining Exit Code  
+      ansible.builtin.debug: 
+        msg: "{{STATUS}}" 

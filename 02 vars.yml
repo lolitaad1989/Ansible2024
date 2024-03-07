@@ -4,10 +4,10 @@
     URL: play.google.com 
   vars_files:
     - demo-vars.txt
-  # vars_prompt:
-  #   - name: URL 
-  #     prompt: Enter URL Value 
-  #     private: false
+  vars_prompt:
+    - name: URL 
+      prompt: Enter URL Value 
+      private: false
     
   tasks: 
     - name: Printing URL 
@@ -20,6 +20,6 @@
       vars:                               # Declaring the variable at task level ( Local variable )
         URL: hotstar.com
 
-    # - name: Printing CLI_URL 
-    #   ansible.builtin.debug:
-    #     msg: value of CLI_URL is {{CLI_URL}}
+    - name: Printing CLI_URL 
+      ansible.builtin.debug:
+        msg: value of CLI_URL is {{CLI_URL}}

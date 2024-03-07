@@ -12,7 +12,7 @@
 
 - name: Play 2
   hosts: dev
-    tasks:
+  tasks:
     - name: printing hello from task1 to play2
       ansible.builtin.debug:
         msg: Hello from task1

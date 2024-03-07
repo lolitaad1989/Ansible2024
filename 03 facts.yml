@@ -13,5 +13,6 @@
       ansible.builtin.debug:
         msg: architecure is {{ansible_architecture}}
 
+    - name: printing os fAMILY 
       ansible.builtin.debug:
         msg: architecure is {{ansible_os_family}}

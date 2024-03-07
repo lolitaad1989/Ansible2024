@@ -3,20 +3,20 @@
   hosts: all
   tasks:
     - name: printing hello from task1 to play1
-      ansible.builtin.debug
+      ansible.builtin.debug:
         msg: Hello from task1
 
     - name: Printing hello from task2 to play2
-      ansible.builtin.debug
+      ansible.builtin.debug:
         msg: Hellp from task2
 
 - name: Play 2
   hosts: dev
     tasks:
     - name: printing hello from task1 to play2
-      ansible.builtin.debug
+      ansible.builtin.debug:
         msg: Hello from task1
 
     - name: Printing hello from task2 to play2
-      ansible.builtin.debug
+      ansible.builtin.debug:
         msg: Hellp from task2

@@ -8,3 +8,7 @@
     - name: printing mac address 
       ansible.builtin.debug:
         msg: Mac address is {{ansible_default_ipv4.macaddress}}
+
+    - name: printing maarchitecure 
+      ansible.builtin.debug:
+        msg: Mac address is {{ansible_architecture}}

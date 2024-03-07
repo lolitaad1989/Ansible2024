@@ -11,4 +11,7 @@
 
     - name: printing maarchitecure 
       ansible.builtin.debug:
-        msg: Mac address is {{ansible_architecture}}
+        msg: architecure is {{ansible_architecture}}
+
+      ansible.builtin.debug:
+        msg: architecure is {{ansible_os_family}}

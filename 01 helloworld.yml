@@ -6,7 +6,7 @@
       ansible.builtin.debug:
         msg: Hello from task1
 
-    - name: Printing hello from task2 to play2
+    - name: Printing hello from task2 to play1
       ansible.builtin.debug:
         msg: Hellp from task2
 

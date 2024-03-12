@@ -35,3 +35,9 @@
 - name: Install node.js packages
   community.general.npm:
     path: /home/{{APPUSER}}/{{COMPONENT}}/
+
+
+- name: Copy files to the roboshop homedirectory
+  ansible.builtin.copy:
+    src: systemd.service
+    dest: /etc/systemd/system/catalogue.service

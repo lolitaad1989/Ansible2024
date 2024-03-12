@@ -1,6 +1,6 @@
 ---
 - name: Configuring the Roboshop project
-  hosts: dev
+  hosts: "{{COMPONENT}}}"
   become: yes
   roles: 
-    - frontend
+    - "{{COMPONENT}}}"

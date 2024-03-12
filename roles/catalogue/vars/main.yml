@@ -1,2 +1,4 @@
 ---
 # vars file for roles/catalogue
+APPUSER: roboshop
+COMPONENT: catalogue

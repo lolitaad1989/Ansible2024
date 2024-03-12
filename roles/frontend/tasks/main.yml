@@ -24,10 +24,9 @@
     remote_src: yes    
 
 - name: Coping Nginx Proxy Config 
-  ansible.builtin.template:                    # Copies the file from the files directory
+  ansible.builtin.copy:                    # Copies the file from the files directory
     src: roboshop.conf  
     dest: /etc/nginx/default.d/roboshop.conf  
-    remote_src: yes  
   notify: Restart Nginx      
 
 - name: Starting frontend service

@@ -38,6 +38,6 @@
 
 
 - name: Copy files to the roboshop homedirectory
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: systemd.service
     dest: /etc/systemd/system/catalogue.service

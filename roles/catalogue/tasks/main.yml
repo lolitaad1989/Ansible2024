@@ -46,3 +46,6 @@
   ansible.builtin.service:
     name: "{{COMPONENT}}"
     state: started
+
+- name: set-hostname
+  ansible.builtin.shell: set-hostname {{COMPONENT}} 

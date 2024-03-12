@@ -40,4 +40,9 @@
 - name: Copy files to the roboshop homedirectory
   ansible.builtin.template:
     src: systemd.service
-    dest: /etc/systemd/system/catalogue.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
+
+- name: Restarting service
+  ansible.builtin.service:
+    name: "{{COMPONENT}}"
+    state: started

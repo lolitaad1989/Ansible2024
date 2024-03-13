@@ -1,2 +1,3 @@
 ---
 # vars file for roles/user
+APPUSER: roboshop

@@ -7,7 +7,7 @@
 
 - name: Installing Redis 
   ansible.builtin.package:
-    name: redis-6.2.11
+    name: redis-6.2.7
     state: present  
 
 - name: set-hostname

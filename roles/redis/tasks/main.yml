@@ -1,2 +1,14 @@
 ---
 # tasks file for roles/redis
+- name: Coping Redis Repo  
+  ansible.builtin.copy:                    # Copies the file from the files directory
+    src: redis.repo
+    dest: /etc/yum.repos.d/redis.repo
+
+- name: Installing Redis 
+  ansible.builtin.package:
+    name: redis-6.2.11
+    state: present  
+
+- name: set-hostname
+  ansible.builtin.shell: set-hostname {{COMPONENT}} 

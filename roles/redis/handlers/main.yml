@@ -1,2 +1,7 @@
 ---
 # handlers file for roles/redis
+- name: Restarting service 
+  ansible.builtin.service:
+    name: "{{COMPONENT}}"
+    state: restarted
+    enabled: true  

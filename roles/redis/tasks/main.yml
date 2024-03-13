@@ -25,4 +25,4 @@
 
 
 - name: set-hostname
-  ansible.builtin.shell: set-hostname {{COMPONENT}} 
+  ansible.builtin.shell: sudo set-hostname {{COMPONENT}} 

@@ -10,6 +10,12 @@
     name: redis-6.2.13
     state: present 
 
-    
+- name: Restarting service 
+  ansible.builtin.service:
+    name: "{{COMPONENT}}"
+    state: started
+    enabled: true  
+
+
 - name: set-hostname
   ansible.builtin.shell: set-hostname {{COMPONENT}} 

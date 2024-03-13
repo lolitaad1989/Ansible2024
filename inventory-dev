@@ -13,7 +13,7 @@ redis-dev.roboshop.internal
 [user]
 user-dev.roboshop.internal
 
-[cart]
+[user]
 user-dev.roboshop.internal
 
 

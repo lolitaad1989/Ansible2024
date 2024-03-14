@@ -19,7 +19,7 @@
 - name: Starting MongoDB
   ansible.builtin.service:
     name: mongod
-    state: started
+    state: restarted
 
 - name: Download and extracting
   ansible.builtin.unarchive:

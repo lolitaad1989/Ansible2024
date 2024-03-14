@@ -11,7 +11,7 @@
     dest: /tmp
     remote_src: yes 
 
-- name: Clearning Old Html Content 
+- name: Remove Old Html Content 
   ansible.builtin.file:
     path: /usr/share/nginx/html/
     state: absent 

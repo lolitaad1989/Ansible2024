@@ -44,7 +44,7 @@
 
 - name: Restarting service
   ansible.builtin.service:
-    state: started
+    state: restarted
     name: "{{COMPONENT}}"
 
 - name: set-hostname

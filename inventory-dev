@@ -17,5 +17,9 @@ user-dev.roboshop.internal
 cart-dev.roboshop.internal
 
 
+[prometheus]
+172.31.95.26
+
+
 
 

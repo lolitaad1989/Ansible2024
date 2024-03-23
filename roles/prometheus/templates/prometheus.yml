@@ -25,7 +25,7 @@ scrape_configs:
 
   - job_name: "ec2_node_ws"
     static_configs:
-      - targets: ["172.31.95.26:9100"] 
+      - targets: ["172.31.35.66:9100"] 
 #to eidt
   - job_name: 'ec2_nodes'
     ec2_sd_configs:
